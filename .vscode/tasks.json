@@ -15,5 +15,21 @@
             "presentation"   : {"focus": true},
             "problemMatcher" : []
         },
+        {
+            "label"          : "git: checkout .vscode",
+            "type"           : "shell",
+            "command"        : "git checkout .vscode/settings.json",
+            "presentation"   : {"showReuseMessage": false, "focus": false, "reveal": "silent", "close": true},
+            "problemMatcher" : []
+        },
+        {
+            "label"          : "cargo: run",
+            "type"           : "shell",
+            "command"        : "cargo",
+            "args"           : ["run"],
+            "problemMatcher" : [],
+            "group"          : {"kind": "build", "isDefault": true },
+            "presentation"   : {"showReuseMessage": true, "focus": true, "reveal": "silent", "close": false}
+        },
     ]
 }
