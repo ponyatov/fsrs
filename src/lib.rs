@@ -5,11 +5,10 @@ mod config {
     const PORT: u16 = 12345;
 }
 
-const numbers: [u8; 6] = [0u8, 1, 2, 3, 4, 5];
-
 pub fn hello() {
+    let numbers: Vec<u8> = vec![0u8, 1, 2, 3, 4, 5];
     println!("Hello, world!");
-    for n in numbers {
+    for n in &numbers {
         println!("{}", n);
     }
     println!("{:?}", numbers);
