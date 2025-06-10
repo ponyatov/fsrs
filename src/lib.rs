@@ -9,7 +9,7 @@ pub fn hello() {
     let numbers: Vec<u8> = vec![0u8, 1, 2, 3, 4, 5];
     println!("Hello, world!");
     print(&numbers);
-    print(&[9, 8, 7, 6]);
+    print(&(1..=11).collect::<Vec<u8>>());
     println!("{:?}", numbers);
 }
 
@@ -17,4 +17,9 @@ fn print(numbers: &[u8]) {
     for n in numbers {
         println!("{}", n);
     }
+}
+
+#[test]
+fn check_me() {
+    assert!(true) //false)
 }
