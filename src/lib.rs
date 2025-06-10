@@ -8,8 +8,13 @@ mod config {
 pub fn hello() {
     let numbers: Vec<u8> = vec![0u8, 1, 2, 3, 4, 5];
     println!("Hello, world!");
-    for n in &numbers {
+    print(&numbers);
+    print(&[9, 8, 7, 6]);
+    println!("{:?}", numbers);
+}
+
+fn print(numbers: &[u8]) {
+    for n in numbers {
         println!("{}", n);
     }
-    println!("{:?}", numbers);
 }
