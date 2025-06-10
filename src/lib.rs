@@ -19,7 +19,6 @@ fn print(numbers: &[u8]) {
     }
 }
 
-#[test]
-fn check_me() {
-    assert!(true) //false)
+fn yes() -> bool {
+    true
 }

@@ -1,0 +1,23 @@
+{
+    "name": "fsrs",
+    "version": "0.0.1",
+    "description": "Fullstack Rust",
+    "main": "static/index.js",
+    "directories": {
+        "doc": "doc",
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ponyatov/fsrs.git"
+    },
+    "author": "Dmitry Ponyatov <dponyatov@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ponyatov/fsrs/issues"
+    },
+    "homepage": "https://github.com/ponyatov/fsrs#readme"
+}
