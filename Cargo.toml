@@ -1,6 +1,10 @@
 [package]
-name = "fsrs"
-version = "0.1.0"
-edition = "2024"
+name        = "fsrs"
+description = "Fullstack Rust"
+version     = "0.0.1"
+authors     = ["Dmitry Ponyatov <dponyatov@gmail.com>"]
+license     = "MIT"
+homepage    = "https://github.com/ponyatov/fsrs"
+edition     = "2024"
 
 [dependencies]
