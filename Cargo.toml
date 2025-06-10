@@ -8,3 +8,5 @@ homepage    =  "https://github.com/ponyatov/fsrs"
 edition     =  "2024"
 
 [dependencies]
+[dev-dependencies]
+[build-dependencies]
