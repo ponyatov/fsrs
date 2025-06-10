@@ -1,0 +1,2 @@
+# fsrs
+Fullstack Rust
