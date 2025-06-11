@@ -1,7 +1,7 @@
 // https://masteringbackend.com/posts/actix-web-the-ultimate-guide#complete-actix-overview
 
 mod config;
-use actix_web::{App, HttpResponse, HttpServer, Responder, delete, get, post, put};
+use actix_web::{App, HttpResponse, HttpServer, Responder, delete, get, post, put, web};
 
 #[get("/")]
 async fn index() -> impl Responder {
@@ -23,6 +23,12 @@ async fn delete() -> impl Responder {
     HttpResponse::NoContent().finish()
 }
 
+#[get("/user/{id}/{name}")]
+async fn user_info(info: web::Path<(u32, String)>) -> impl Responder {
+    let (id, name) = info.into_inner();
+    HttpResponse::Ok().body(format!("User ID: {}, Name: {}", id, name))
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     println!("Server started at http://{}:{}", config::HOST, config::PORT);
@@ -32,6 +38,7 @@ async fn main() -> std::io::Result<()> {
             .service(create)
             .service(update)
             .service(delete)
+            .service(user_info)
     })
     .bind(config::BIND)?
     .run()
