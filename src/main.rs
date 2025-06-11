@@ -7,13 +7,11 @@ mod messages_actix;
 #[cfg(test)]
 mod test;
 
-// use actix_web::{App, HttpServer, web};
 use crate::messages_actix::MessageApp;
-
-use std::io::{Result,Error};
+use actix_web::{App, Error, HttpServer, Result, web};
 
 #[actix_web::main]
-async fn main() -> Result<(),Error> {
+async fn main() -> Result<(), Error> {
     unsafe {
         std::env::set_var("RUST_LOG", "actix_web=info");
     }

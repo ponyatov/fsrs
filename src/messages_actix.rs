@@ -1,7 +1,5 @@
-use actix_web::{App, HttpServer, web};
+use actix_web::{App, Error, HttpServer, Result, web};
 use std::sync::Mutex;
-
-// use std::io::{Error, Result};
 
 pub struct MessageApp {
     port: u16,
@@ -12,7 +10,7 @@ impl MessageApp {
         MessageApp { port }
     }
 
-    pub async fn run(&self) -> std::io::Result<()> {
+    pub async fn run(&self) -> Result<()> {
         let port = self.port;
         let server = HttpServer::new(|| {
             App::new()
