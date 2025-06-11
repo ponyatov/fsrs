@@ -8,8 +8,9 @@ homepage    =  "https://github.com/ponyatov/fsrs"
 edition     =  "2024"
 
 [dependencies]
-actix = "0.13.5"
-hyper = "1.6.0"
+actix-web = "4.11.0"
+env_logger = "0.11.8"
+serde = {version="1.0.219",features = ["derive"]}
 
 [dev-dependencies]
 [build-dependencies]
