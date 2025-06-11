@@ -1,5 +1,6 @@
 // https://masteringbackend.com/posts/actix-web-the-ultimate-guide#complete-actix-overview
 
+mod config;
 use actix_web::{get, App, HttpServer, Responder};
 
 #[get("/")]
@@ -9,10 +10,11 @@ async fn hello() -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    println!("Server started at http://{}:{}", config::HOST, config::PORT);
     HttpServer::new(|| {
         App::new().service(hello)
     })
-        .bind("127.0.0.1:8080")?
+        .bind(config::BIND)?
         .run()
         .await
 }
