@@ -1,21 +1,18 @@
-#![allow(dead_code)]
-#![allow(unused_imports)]
+// https://masteringbackend.com/posts/actix-web-the-ultimate-guide#complete-actix-overview
 
-mod config;
-mod messages_actix;
+use actix_web::{get, App, HttpServer, Responder};
 
-#[cfg(test)]
-mod test;
-
-use crate::messages_actix::MessageApp;
-use actix_web::{App, Error, HttpServer, Result, web};
+#[get("/")]
+async fn hello() -> impl Responder {
+    "Hello, Actix web!"
+}
 
 #[actix_web::main]
-async fn main() -> Result<(), Error> {
-    unsafe {
-        std::env::set_var("RUST_LOG", "actix_web=info");
-    }
-    env_logger::init();
-    let app = MessageApp::new(config::PORT);
-    app.run()
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| {
+        App::new().service(hello)
+    })
+        .bind("127.0.0.1:8080")?
+        .run()
+        .await
 }
